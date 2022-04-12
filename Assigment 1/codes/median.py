@@ -1,15 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[20]:
-
-
-
-
-
-# In[30]:
-
-
 #Code- for verification of obtained x value from given median.
 
 # Pericherla Pranav Varma
@@ -39,16 +27,3 @@ plt.annotate('A(48,46)', xy=(49, 45), textcoords='data')
 plt.plot(x,y)
 plt.plot(z,y)
 plt.show()
-
-
-# In[7]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
