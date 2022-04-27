@@ -132,8 +132,11 @@ columns=fullflexible
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\question}{\underline{\underline{\textbf{QUESTION:}}}}
+\newcommand{\required}{Required:}
 \newcommand{\cosec}{\,\text{cosec}\,}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\avec}[1]{\overrightarrow{#1}}
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
 %\numberwithin{equation}{section}
@@ -248,61 +251,58 @@ columns=fullflexible
 % For peerreview papers, this IEEEtran command inserts a page break and
 % creates the second title. It will be ignored for other modes.
 %\IEEEpeerreviewmaketitle
-
 \begin{abstract}
 This PDF contains the solution for Assignment 2 (ICSE Class 12 Maths 2019 Q.15(a))
 \end{abstract}
 %template ends here
-
-
 %main text begins
 %%%%%%%
 %%%%%%%
 \begin{flushleft}
 	\begin{large}
-		\underline{\underline{\textbf{QUESTION:}}} \\[8pt]
+		\question \\[8pt]
 	\end{large}
-If $\overrightarrow{a}$ and $\overrightarrow{b}$ are perpendicular vectors,$ \mydet{\overrightarrow{a}+\overrightarrow{b}}$ = 13 and $ \mydet{\overrightarrow{a}}$ = 5,find the value of $ \mydet{\overrightarrow{b}}$.\\[9pt]
+If $\avec{a}$ and $\avec{b}$ are perpendicular vectors,$ \mydet{\avec{a}+\avec{b}}$ = 13 and $ \mydet{\avec{a}}$ = 5,find the value of $ \mydet{\avec{b}}$.\\[9pt]
 \solution \\[8pt]
 Given:
-\begin{enumerate}[label=(\roman*)]
-\item $\overrightarrow{a}$ and $\overrightarrow{b}$ are perpendicular,  $\therefore$ $\theta$ = $90^{o}$ \\i.e.,
-\begin{align*}
- \overrightarrow{a}\cdot\overrightarrow{b}  &=   \mydet{\overrightarrow{a}} \mydet{\overrightarrow{b}}\cos\theta.\\[6pt]
- \overrightarrow{a}\cdot\overrightarrow{b}  &= \mydet{\overrightarrow{a}}\mydet{\overrightarrow{b}}\cos90^o.\\[6pt]
- \overrightarrow{a}\cdot\overrightarrow{b}  &=  \mydet{\overrightarrow{a}}\mydet{\overrightarrow{b}}\times 0
- \end{align*}
+	\begin{enumerate}[label=(\roman*)]
+		\item $\avec{a}$ and $\avec{b}$ are perpendicular,  $\therefore$ $\theta$ = $90^{o}$ \\i.e.,
+			\begin{align*}
+				 \avec{a}\cdot\avec{b}  &=   \mydet{\avec{a}} \mydet{\avec{b}}\cos\theta.\\[6pt]
+				 \avec{a}\cdot\avec{b}  &= \mydet{\avec{a}}\mydet{\avec{b}}\cos90^o.\\[6pt]
+				 \avec{a}\cdot\avec{b}  &=  \mydet{\avec{a}}\mydet{\avec{b}}\times 0
+			 \end{align*}
  %
- \begin{align}
- \overrightarrow{a}\cdot\overrightarrow{b}  = 0.
- \label{eq:1} 
- \end{align}
-\item 
-\begin{align}
-\mydet{\overrightarrow{a}} &= 5 
-\label{eq:2}
-\end{align}
-\begin{align}
- \mydet{\overrightarrow{a}+\overrightarrow{b}} &= 13.
-\label{eq:3}
-\end{align}
-\end{enumerate}
-Required: 
-\begin{enumerate}[label=(\roman*)]	
-\item value of $\mydet{\overrightarrow{b}}$.
-\end{enumerate}
+			 \begin{align}
+				 \avec{a}\cdot\avec{b}  = 0.
+				 \label{eq:1} 
+			 \end{align}
+		\item 
+			\begin{align}
+				\mydet{\avec{a}} &= 5 
+				\label{eq:2}
+			\end{align}
+			\begin{align}
+				\mydet{\avec{a}+\avec{b}} &= 13.
+				\label{eq:3}
+				\end{align}
+	\end{enumerate}
+\required
+	\begin{enumerate}[label=(\roman*)]	
+		\item value of $\mydet{\avec{b}}$.
+	\end{enumerate}
 	\begin{align}
-	\mydet{\overrightarrow{a}+\overrightarrow{b}} &= \sqrt{\mydet{\overrightarrow{a}}^2 + \mydet{\overrightarrow{b}}^2 + 2\brak{ \overrightarrow{a}\cdot\overrightarrow{b}}} 
-	\label{eq:4}	
+		\mydet{\avec{a}+\avec{b}} &= \sqrt{\mydet{\avec{a}}^2 + \mydet{\avec{b}}^2 + 2\brak{ \avec{a}\cdot\avec{b}}} 
+		\label{eq:4}	
 	\end{align}
-	by substituting \eqref{eq:1} , \eqref{eq:2} and \eqref{eq:3} in \eqref{eq:4} ,\\[6pt]
+by substituting \eqref{eq:1} , \eqref{eq:2} and \eqref{eq:3} in \eqref{eq:4} ,\\[6pt]
 	\begin{align*}	
-	 13 &= \sqrt{5^2 + \left|\overrightarrow{b}\right|^2 + 0}\\[6pt]
-	\left|\overrightarrow{b}\right| &= \sqrt{13^2 - 5^2}.\\[6pt]
-	\left|\overrightarrow{b}\right| &= \sqrt{144}.\\[6pt]
-	\left|\overrightarrow{b}\right| &= 12.
+		 13 &= \sqrt{5^2 + \mydet{\avec{b}}^2 + 0}\\[6pt]
+		\mydet{\avec{b}} &= \sqrt{13^2 - 5^2}.\\[6pt]
+		\mydet{\avec{b}} &= \sqrt{144}.\\[6pt]
+		\mydet{\avec{b}} &= 12.
 	\end{align*}	
 Result:\\[6pt]	
-	$\therefore$ , value of \underline{$\left|\overrightarrow{b}\right|$ = 12}.\\
+	$\therefore$ ,value of \underline{$\mydet{\avec{b}}$ = 12}.\\
 \end{flushleft}
 \end{document}
