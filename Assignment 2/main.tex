@@ -124,6 +124,7 @@ columns=fullflexible
 \providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
 \providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
 \providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
@@ -134,6 +135,7 @@ columns=fullflexible
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \newcommand{\question}{\underline{\underline{\textbf{QUESTION:}}}}
 \newcommand{\required}{Required:}
+\newcommand{\given}{Given:}
 \newcommand{\cosec}{\,\text{cosec}\,}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \newcommand{\avec}[1]{\overrightarrow{#1}}
@@ -262,47 +264,47 @@ This PDF contains the solution for Assignment 2 (ICSE Class 12 Maths 2019 Q.15(a
 	\begin{large}
 		\question \\[8pt]
 	\end{large}
-If $\avec{a}$ and $\avec{b}$ are perpendicular vectors,$ \mydet{\avec{a}+\avec{b}}$ = 13 and $ \mydet{\avec{a}}$ = 5,find the value of $ \mydet{\avec{b}}$.\\[9pt]
+If $\vec{a}$ and $\vec{b}$ are perpendicular vectors,$ \norm{\vec{a}+\vec{b}}$ = 13 and $ \norm{\vec{a}}$ = 5,find the value of $ \norm{\vec{b}}$.\\[9pt]
 \solution \\[8pt]
-Given:
+\given
 	\begin{enumerate}[label=(\roman*)]
-		\item $\avec{a}$ and $\avec{b}$ are perpendicular,  $\therefore$ $\theta$ = $90^{o}$ \\i.e.,
+		\item $\vec{a}$ and $\vec{b}$ are perpendicular,  $\therefore$ $\theta$ = $90^{o}$ \\i.e.,
 			\begin{align*}
-				 \avec{a}\cdot\avec{b}  &=   \mydet{\avec{a}} \mydet{\avec{b}}\cos\theta.\\[6pt]
-				 \avec{a}\cdot\avec{b}  &= \mydet{\avec{a}}\mydet{\avec{b}}\cos90^o.\\[6pt]
-				 \avec{a}\cdot\avec{b}  &=  \mydet{\avec{a}}\mydet{\avec{b}}\times 0
+				 \vec{a}\cdot\vec{b}  &=   \norm{\vec{a}} \norm{\vec{b}}\cos\theta.\\[6pt]
+				 \vec{a}\cdot\vec{b}  &= \norm{\vec{a}}\norm{\vec{b}}\cos90^o.\\[6pt]
+				 \vec{a}\cdot\vec{b}  &=  \norm{\vec{a}}\norm{\vec{b}}\times 0
 			 \end{align*}
  %
 			 \begin{align}
-				 \avec{a}\cdot\avec{b}  = 0.
+				 \vec{a}\cdot\vec{b}  = 0.
 				 \label{eq:1} 
 			 \end{align}
 		\item 
 			\begin{align}
-				\mydet{\avec{a}} &= 5 
+				\norm{\vec{a}} &= 5 
 				\label{eq:2}
 			\end{align}
 			\begin{align}
-				\mydet{\avec{a}+\avec{b}} &= 13.
+				\norm{\vec{a}+\vec{b}} &= 13.
 				\label{eq:3}
 				\end{align}
 	\end{enumerate}
 \required
 	\begin{enumerate}[label=(\roman*)]	
-		\item value of $\mydet{\avec{b}}$.
+		\item value of $\norm{\vec{b}}$.
 	\end{enumerate}
 	\begin{align}
-		\mydet{\avec{a}+\avec{b}} &= \sqrt{\mydet{\avec{a}}^2 + \mydet{\avec{b}}^2 + 2\brak{ \avec{a}\cdot\avec{b}}} 
+		\norm{\vec{a}+\vec{b}} &= \sqrt{\norm{\vec{a}}^2 + \norm{\vec{b}}^2 + 2\brak{ \vec{a}\cdot\vec{b}}} 
 		\label{eq:4}	
 	\end{align}
 by substituting \eqref{eq:1} , \eqref{eq:2} and \eqref{eq:3} in \eqref{eq:4} ,\\[6pt]
 	\begin{align*}	
-		 13 &= \sqrt{5^2 + \mydet{\avec{b}}^2 + 0}\\[6pt]
-		\mydet{\avec{b}} &= \sqrt{13^2 - 5^2}.\\[6pt]
-		\mydet{\avec{b}} &= \sqrt{144}.\\[6pt]
-		\mydet{\avec{b}} &= 12.
+		 13 &= \sqrt{5^2 + \norm{\vec{b}}^2 + 0}\\[6pt]
+		\norm{\vec{b}} &= \sqrt{13^2 - 5^2}.\\[6pt]
+		\norm{\vec{b}} &= \sqrt{144}.\\[6pt]
+		\norm{\vec{b}} &= 12.
 	\end{align*}	
 Result:\\[6pt]	
-	$\therefore$ ,value of \underline{$\mydet{\avec{b}}$ = 12}.\\
+	$\therefore$ ,value of \underline{$\norm{\vec{b}}$ = 12}.\\
 \end{flushleft}
 \end{document}
