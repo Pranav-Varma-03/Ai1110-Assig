@@ -1,0 +1,124 @@
+\documentclass{beamer}
+\setbeamertemplate{caption}[numbered]{}
+
+\usetheme{CambridgeUS}
+
+
+\title{AI1110 \\ Assignment 3}
+\author{Pericherla Pranav Varma \\ CS21BTECH11044}
+\date{16 May 2022}
+\usepackage{enumitem}
+\usepackage{tfrupee}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+
+\def\inputGnumericTable{}
+
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}
+\usepackage{caption} 
+\captionsetup[table]{skip=3pt}  
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\renewcommand{\thefigure}{\arabic{table}}
+\renewcommand{\thetable}{\arabic{table}}
+
+\usepackage{enumitem}
+\usepackage{tfrupee}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+
+\def\inputGnumericTable{}
+
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}
+\usepackage{caption} 
+\captionsetup[table]{skip=3pt}  
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\renewcommand{\thefigure}{\arabic{table}}
+\renewcommand{\thetable}{\arabic{table}}
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+%	
+	\begin{frame}{Outline}
+    		\tableofcontents
+	\end{frame}
+%
+	\section{Question}
+	\begin{frame}{CBSE class 11 Exercise 16.3 Problem 12}
+Check whether the following probabilities $\pr{A}$ and $\pr{B}$ are consistently defined.\\[9pt]
+\begin{enumerate}[label=(\alph{enumi})]
+\item $\pr{A}=0.5$, $\pr{B}=0.7$, $\pr{AB}=0.6$.%\\[6pt]
+\item $\pr{A}=0.5$, $\pr{B}=0.4$, $\pr{A+B}=0.8$.
+\end{enumerate}
+	\end{frame}
+%
+\section{Solution}
+	\begin{frame}{Solution}
+Condition,\\
+$\pr{X}$ and $\pr{Y}$ are consistently defined if :\\
+\begin{align*}
+\pr{XY} < \pr{X}
+\end{align*}	
+and
+\begin{align*}
+\pr{XY}< \pr{Y}
+\end{align*}	
+\end{frame}
+%
+%\begin{enumerate}[label=(\roman*)]
+\begin{frame}{}
+%\item   
+(i), $\pr{A}=0.5$, $\pr{B}=0.7$, $\pr{AB}=0.6$
+\begin{align*}
+\pr{AB}>\pr{A}
+\end{align*}
+$\therefore$ the given probabilities aren't consistently defined.%\\[6pt]
+\end{frame}
+%
+\begin{frame}{Solution}
+%\item 
+(ii), $\pr{A}=0.5$,$\pr{B}=0.4$, $\pr{A+B}=0.8$.\\[6pt]
+As we know,
+\begin{align*}
+\pr{A+B} &= \pr{A} +\pr{B} - \pr{AB}\\
+0.8 &= 0.5 + 0.4 - \pr{AB}\\
+\pr{AB} &= 0.9-0.8 =0.1.
+\end{align*}
+\end{frame}
+%
+\begin{frame}{Solution}
+\begin{align}
+\pr{AB}&=0.1
+\label{eq.1}
+\end{align}
+By \eqref{eq.1} we can say that,
+\begin{align*}
+\pr{AB}<\pr{A} \\
+\pr{AB}<\pr{B}
+\end{align*}
+So, the given probabilities are consistently defined.\\[6pt]
+\end{frame}
+%\end{enumerate}	
+\end{document}
