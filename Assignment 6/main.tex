@@ -1,0 +1,118 @@
+\documentclass{beamer}
+
+%packages:
+% \usepackage{tfrupee}
+% \usepackage{amsmath}
+% \usepackage{amssymb}
+% \usepackage{gensymb}
+% \usepackage{txfonts}
+
+% \def\inputGnumericTable{}
+
+% \usepackage[latin1]{inputenc}                                 
+% \usepackage{color}                                            
+% \usepackage{array}                                            
+% \usepackage{longtable}                                        
+% \usepackage{calc}                                             
+% \usepackage{multirow}                                         
+% \usepackage{hhline}                                           
+% \usepackage{ifthen}
+% \usepackage{caption} 
+% \captionsetup[table]{skip=3pt}  
+% \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+% \providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+% %\renewcommand{\thefigure}{\arabic{table}}
+% \renewcommand{\thetable}{\arabic{table}}      
+
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{tfrupee}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+
+\def\inputGnumericTable{}
+
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}
+\usepackage{caption} 
+\captionsetup[table]{skip=3pt}  
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\renewcommand{\thefigure}{\arabic{table}}
+\renewcommand{\thetable}{\arabic{table}}   
+\newcommand*{\Comb}[2]{{}^{#1}C_{#2}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 6} 
+\author{Pericherla Pranav Varma\\CS21BTECH11044}
+\date{\today}
+% \logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+    % Title page
+    \begin{frame}
+        \titlepage 
+    \end{frame}
+
+    % Outline
+    \begin{frame}{Outline}
+        \tableofcontents
+    \end{frame}
+
+    \section{Question}
+    	\begin{frame}{Question}
+    	Papoulis Pillai Ch5 Ex 5-46:\\[9pt]
+    Show that, if $\phi(\omega)=E(e^{i \omega x})$ then for any $a_i$,\\[6pt]
+   	\begin{align*}
+   	\sum^{n}_{i=1} \sum^{n}_{j=1}  \phi(\omega_1 - \omega_2) a_i a^*_j \ge 0.
+   	\end{align*}
+    % Add the table of probability here,
+	Hint:\\	
+	\begin{align*}
+	E \cbrak{ \mydet{ \sum^{n}_{i=1} a_i e^{k \omega i x}}^2 } \ge 0 \\
+	\end{align*} 
+  
+    	\end{frame}
+%    
+    \section{Solution}
+        \begin{frame}{Solution}
+        As we know that,
+        \begin{align*}
+        \mydet{Z}^2 = Z \cdot Z^*
+        \end{align*}
+        and from given hint,
+        \begin{align*}
+        E \cbrak{ \sbrak{ \sum^{n}_{i=1} a_i e^{k \omega i x}} \cdot \sbrak {\sum^{n}_{j=1} a_j e^{k \omega j x}}^*} \ge 0\\
+       E \cbrak{ \sbrak{ \sum^{n}_{i=1} a_i e^{k \omega i x}} \cdot \sbrak {\sum^{n}_{j=1} a^*_j e^{-k \omega j x}}} \ge 0\\ 
+       E \cbrak{ \sbrak{ \sum^{n}_{i=1} a_i e^{k \omega i x}} \cdot \sbrak {\sum^{n}_{j=1} a^*_j e^{-k \omega j x}}} \ge 0\\
+        \end{align*}
+        \end{frame}
+    %
+    \begin{frame}{Solution}
+	\begin{align*}
+	E \cbrak{ \sum^{n}_{j=1} \sum^{n}_{i=1} a_i a^*_j e^{k \omega (i-j) x}} \ge 0\\
+	\end{align*}	    
+And Given : $\phi(\omega)=E(e^{i \omega x}) \therefore$ on rearranging we get,
+	\begin{align*}
+	\sum^{n}_{i=1} \sum^{n}_{j=1} a_i a^*_j \phi(\omega_i - \omega_j) \ge 0.
+	\end{align*}
+ 
+    \end{frame}
+\end{document}
