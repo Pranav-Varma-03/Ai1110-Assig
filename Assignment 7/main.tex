@@ -1,0 +1,131 @@
+\documentclass{beamer}
+
+%packages:
+% \usepackage{tfrupee}
+% \usepackage{amsmath}
+% \usepackage{amssymb}
+% \usepackage{gensymb}
+% \usepackage{txfonts}
+
+% \def\inputGnumericTable{}
+
+% \usepackage[latin1]{inputenc}                                 
+% \usepackage{color}                                            
+% \usepackage{array}                                            
+% \usepackage{longtable}                                        
+% \usepackage{calc}                                             
+% \usepackage{multirow}                                         
+% \usepackage{hhline}                                           
+% \usepackage{ifthen}
+% \usepackage{caption} 
+% \captionsetup[table]{skip=3pt}  
+% \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+% \providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+% %\renewcommand{\thefigure}{\arabic{table}}
+% \renewcommand{\thetable}{\arabic{table}}      
+
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{tfrupee}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+
+\def\inputGnumericTable{}
+
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}
+\usepackage{caption} 
+\captionsetup[table]{skip=3pt}  
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\renewcommand{\thefigure}{\arabic{table}}
+\renewcommand{\thetable}{\arabic{table}}   
+\newcommand*{\Comb}[2]{{}^{#1}C_{#2}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 7} 
+\author{Pericherla Pranav Varma\\CS21BTECH11044}
+\date{\today}
+% \logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+    % Title page
+    \begin{frame}
+        \titlepage 
+    \end{frame}
+
+    % Outline
+    \begin{frame}{Outline}
+        \tableofcontents
+    \end{frame}
+
+    \section{Question}
+    	\begin{frame}{Question}
+    	Papoulis Pillai Ch5 Ex 6-69:\\[9pt]
+    Show that, if random variables $x$ and $y$ are $N(0,0,{\sigma_1}^2,{\sigma_2}^2,r)$ then,\\[6pt]
+   	\begin{align*}
+   	E \cbrak{ \mydet {xy} } = \dfrac{2}{\pi} \int_{0}^{c} arcsin \dfrac{\mu}{\sigma_1 \sigma_2} d \mu + \dfrac{2 \sigma_1 \sigma_2}{\pi} = \dfrac{2 \sigma_1 \sigma_2}{\pi} (cos \alpha + \alpha sin \alpha)
+   	\end{align*}
+    % Add the table of probability here,
+	where, $r = sin \alpha $ and $C = r \sigma_1 \sigma_2.$
+  
+    	\end{frame}
+%    
+	\section{Theory}
+	\begin{frame}{Theory}
+	Given two jointly normal random variables $x$ and $y$, we form the mean 		
+		\begin{align*}
+		I = E \cbrak{g(x,y)} = \int_{- \infty}^{\infty} \int_{- \infty}^{\infty} g(x,y) f(x,y) dx dy
+		\end{align*}
+		of some function g(x, y) of (x, y). The above integral is a function $I(\mu)$ of the covariance
+$\mu$ of the random variables $x$ and $y$ and of four parameters specifying the joint density
+$f(x, y)$ of $x$ and $y$. We shall show that if $g(x, y)f(x, y) \longrightarrow 0$ as $(x, y) \longrightarrow \infty$, then 
+		\begin{align*}
+		\dfrac{\partial^n I(\mu)}{\partial {\mu}^n} = \int_{- \infty}^{\infty} \int_{- \infty}^{\infty} \dfrac{\partial^{2n} g(x,y)}{\partial x^n \partial y^n} f(x,y) dx dy = E \brak{\dfrac{\partial^{2n} g(x,y)}{\partial x^n \partial y^n}}
+		\end{align*}
+	\end{frame}
+	
+    \section{Solution}
+        \begin{frame}{Solution}
+        Using Price's theorem,
+        \begin{align}
+        \dfrac{\partial E \cbrak{ \mydet{xy}}}{\partial \mu} &= E \cbrak{ \dfrac{d \mydet{x}}{dx} + \dfrac{d \mydet{y}}{dy}} = E \cbrak{sgnx sgny}\\[9pt]
+        &= P \cbrak{xy > 0} - P \cbrak{xy < 0} \\[9pt]
+        &= \dfrac{2 \alpha}{\pi}\\[9pt] 	
+        &=\dfrac{2}{\pi} arcsin{\dfrac{\mu}{\sigma_1 \sigma_2}}
+        \end{align}
+        if $\mu = 0$, then the RVs $x$ and $y$ are independent,\\[9pt] hence,\\
+       
+        \end{frame}
+    %
+    \begin{frame}{Solution}
+    at $\mu = 0$
+	\begin{align*}
+	 E \cbrak{ \mydet{xy}} &= E \cbrak{\mydet x} E \cbrak{\mydet x}\\[9pt]
+	  &= \dfrac{2}{\pi} \sigma_1 \sigma_2
+	\end{align*}	    
+Integrating (4) using the above,we obtain
+	\begin{align*}
+	E \cbrak{ \mydet{xy}} &= \dfrac{2}{\pi} \int_{ 0}^{\mu} arcsin{\dfrac{\mu}{\sigma_1 \sigma_2}} + \dfrac{2}{\pi} \sigma_1 \sigma_2 \\[9pt]
+	&= \dfrac{2}{\pi} \sigma_1 \sigma_2 (cos{\alpha} + \alpha sin{\alpha})
+	\end{align*}
+ 
+    \end{frame}
+\end{document}
