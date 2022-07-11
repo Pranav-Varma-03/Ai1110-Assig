@@ -372,8 +372,11 @@ ii) Verifying Variance by using \eqref{eq:2.3}:
 	\begin{align*}
     	 E\sbrak{U^2} &= \int_{-\infty}^{\infty} x^2 p_X(x) dx\\[7pt]
     	 E\sbrak{U^2} &= \int_{-\infty}^{\infty} x^2 \frac{1}{\sqrt{2\pi}}\exp\brak{-\frac{x^2}{2}} dx \\[7pt]
-     E\sbrak{U^2} &= 2\int_{0}^{\infty} x^2 \frac{1}{\sqrt{2\pi}}\exp\brak{-\frac{x^2}{2}} dx \\
-     E\sbrak{U^2} &= \sqrt{\frac{2}{\pi}} \sbrak{x \exp\brak{-\frac{x^2}{2}} - \int_{0}^{\infty}\exp\brak{ -\frac{x^2}{2}} dx}\\
+     E\sbrak{U^2} &= 2\int_{0}^{\infty} x^2 \frac{1}{\sqrt{2\pi}}\exp\brak{-\frac{x^2}{2}} dx \\[7pt]
+     E\sbrak{U^2} &= \sqrt{\frac{2}{\pi}} \sbrak{ x \int_{0}^{\infty} x \exp\brak{-\frac{x^2}{2}}dx}\\[7pt] &- \sqrt{\frac{2}{\pi}} \sbrak{\int_{0}^{\infty} {\dfrac{-1}{2}}\exp\brak{-\frac{x^2}{2}}dx}\\[7pt]
+     E\sbrak{U^2} &= \sqrt{\frac{2}{\pi}} \sbrak{x \exp\brak{-\frac{x^2}{2}} \Big|_{0}^{\infty} - \int_{0}^{\infty}\exp\brak{ -\frac{x^2}{2}} dx}\\[7pt]
+    &: \lim_{x \to 0} x \exp\brak{-\frac{x^2}{2}} = 0 \\[7pt]
+     &: \lim_{x \to \infty} x \exp\brak{-\frac{x^2}{2}} = 0 \\[7pt]
      E\sbrak{U^2} &= \sqrt{\frac{2}{\pi}} \sbrak{0 + \sqrt{\frac{\pi}{2}}}\\
      E\sbrak{U^2} &= 1
      \end{align*}	
@@ -418,7 +421,6 @@ The output CDF is plotted in Figure \eqref{fig:other_cdf}.
 %
 %
 \item Find a theoretical expression for $F_V(x)$.
-
 \solution\\
 Need to find $F_v(x) i.e., \pr{V \le x}$ :
 	\begin{align*}
@@ -440,5 +442,43 @@ As we know, $\pr{U \le k} = k$ :
         0 & for $x < 0$
     		\end{cases*}
 	\end{equation}
+\end{enumerate}
+%
+\section{Triangular Distribution}
+\begin{enumerate}[label=\textbf{\thesection.\arabic*},ref=\thesection.\theenumi]
+%
+\item
+%
+Generate T = $U_1$ + $U_2$ \\
+\solution \\
+Execute the following C code
+\begin{lstlisting}
+wget https://github.com/Pranav-Varma-03/Ai1110-Assig/blob/main/Random%20Numbers/codes/q4_1.c
+wget https://github.com/Pranav-Varma-03/Ai1110-Assig/blob/main/Random%20Numbers/codes/coeffs.h
+\end{lstlisting}
+%
+\item
+%
+Find the CDF of T \\
+%
+%\ref{fig:CDF_Numerical}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{figs/cdf_plot_tri.png}
+\caption{Numerical CDF of Triangular Distribution of $X$}
+\label{fig:CDF_Numerical}
+\end{figure}
+%
+\item
+%
+Find the PDF of T \\
+%
+%\ref{fig:CDF_Numerical}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{figs/pdf_plot_tri.png}
+\caption{Numerical PDF of Triangular Distribution of $X$}
+\label{fig:PDF_Numerical}
+\end{figure}
 \end{enumerate}
 \end{document}
