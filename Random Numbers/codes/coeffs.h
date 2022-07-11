@@ -226,9 +226,10 @@ temp = temp/(i-1);
 return temp;
 
 }
+// finding variance of squares on n random numbers
 double variance(char *str)
 {
-// finding mean of squares on n random numbers
+
 int i=0,c;
 FILE *fp;
 double x, temp=0.0;
@@ -239,7 +240,7 @@ while(fscanf(fp,"%lf",&x)!=EOF)
 {
 //Count numbers in file
 i=i+1;
-//Add all numbers in file
+//Add all squares of numbers in file
 temp = temp+x*x;
 }
 fclose(fp);
@@ -250,11 +251,11 @@ double Ex_2 = temp;
 double var;
 double u; //mean
 u = mean(str);
- 
+ //subtracting mean square from sum of squares of numbers 
 var = Ex_2 - u*u;
 return var;
 }
-//End function for calculating the mean of random numbers
+//End function for calculating the variance of random numbers
 
 // -----------------------------------------------------------------------------------------------------------
 
@@ -279,17 +280,46 @@ fclose(fp);
 void gaussian(char *str, int len)
 {
 int i,j;
-double temp;
-FILE *fp;
+    double temp;
+    FILE *fp;
 
-fp = fopen(str,"w");
-//Generate numbers
-for (i = 0; i < len; i++)
-{
-
-fprintf(fp,"%lf\n",temp);
-}
+    fp = fopen(str,"w");
+    //Generate numbers
+    for (i = 0; i < len; i++)
+    {
+        temp = 0;
+        for (j = 0; j < 12; j++)
+        {
+            temp += (double)rand()/RAND_MAX;
+        }
+        temp-=6;
+        fprintf(fp,"%lf\n",temp);
+    }
 fclose(fp);
 
 }
 //End function for generating Gaussian random numbers
+
+//---------------------------------------------------------------------------------------------------------------------
+//Defining the function for generating Triangular random numbers
+void triangular(char *str, int len)
+{
+int i,j;
+    double temp;
+    FILE *fp;
+
+    fp = fopen(str,"w");
+    //Generate numbers
+    for (i = 0; i < len; i++)
+    {
+        temp = 0;
+        for (j = 0; j < 2; j++)
+        {
+            temp += (double)rand()/RAND_MAX;
+        }
+        fprintf(fp,"%lf\n",temp);
+    }
+fclose(fp);
+
+}
+//End function for generating Triangular random numbers

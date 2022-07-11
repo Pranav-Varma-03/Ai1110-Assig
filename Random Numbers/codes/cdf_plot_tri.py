@@ -14,7 +14,7 @@ err = [] #declaring probability list
 #--------------------------------------------------------------------------
 #--------------------------------------PRACTICAL-------------------------
 #--------------------------------------------------------------------------
-randvar = np.loadtxt('gau.dat',dtype='double')
+randvar = np.loadtxt('tri.dat',dtype='double')
 for i in range(0,30):
 	err_ind = np.nonzero(randvar < x[i]) #checking probability condition
 	err_n = np.size(err_ind) #computing the probability
@@ -25,17 +25,17 @@ for i in range(0,30):
 #--------------------------------------------------------------------------
 
 #Defining Q function
-def Q(x):
-	return 0.5 - (math.erf(x/np.sqrt(2)))*0.5
+#def Q(x):
+#	return 0.5 - (math.erf(x/np.sqrt(2)))*0.5
 
 #Defining CDF from Q function
-def gauss_cdf(x):
-	return 1 - Q(x)
+#def gauss_cdf(x):
+#	return 1 - Q(x)
 	
-vec_gauss_cdf = scipy.vectorize(gauss_cdf,otypes=[float])
+#vec_gauss_cdf = scipy.vectorize(gauss_cdf,otypes=[float])
 #---------------------------------------------------------------------------
-plt.plot(x.T,err,'o')#plotting the CDF
-plt.plot(x,vec_gauss_cdf(x)) #plotting the CDF (Continuous Graph Theoretical)
+plt.plot(x.T,err)#plotting the CDF
+#plt.plot(x,vec_gauss_cdf(x)) #plotting the CDF (Continuous Graph Theoretical)
 plt.grid() #creating the grid
 plt.xlabel('$x$')
 plt.ylabel('$F_X(x)$')

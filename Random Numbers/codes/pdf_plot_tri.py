@@ -14,7 +14,7 @@ pdf = [] #declaring pdf list
 h = 2*maxlim/(maxrange-1);	
 #randvar = np.random.normal(0,1,simlen)
 #randvar = np.loadtxt('uni.dat',dtype='double')
-randvar = np.loadtxt('gau.dat',dtype='double')
+randvar = np.loadtxt('tri.dat',dtype='double')
 #---------------------------------------------------------------------------
 #-----------------------PRACTICAL-------------------------------------------
 #---------------------------------------------------------------------------
@@ -32,13 +32,13 @@ for i in range(0,maxrange-1):
 #----------------------------------------------------------------------------
 #------------------------THEORETICAL-----------------------------------------
 #----------------------------------------------------------------------------
-def gauss_pdf(x):
-	return 1/mp.sqrt(2*np.pi)*np.exp(-x**2/2.0)
-	
-vec_gauss_pdf = scipy.vectorize(gauss_pdf)
+#def gauss_pdf(x):
+#	return 1/mp.sqrt(2*np.pi)*np.exp(-x**2/2.0)
+#	
+#vec_gauss_pdf = scipy.vectorize(gauss_pdf)
 #-----------------------------------------------------------------------------
-plt.plot(x[0:(maxrange-1)].T,pdf,'o') #Numerical Values (data info practical)
-plt.plot(x,vec_gauss_pdf(x)) #plotting the CDF (Continuous Graph Theoretical)
+plt.plot(x[0:(maxrange-1)].T,pdf) #Numerical Values (data info practical)
+#plt.plot(x,vec_gauss_pdf(x)) #plotting the CDF (Continuous Graph Theoretical)
 plt.grid() #creating the grid
 plt.xlabel('$x_i$')
 plt.ylabel('$p_X(x_i)$')

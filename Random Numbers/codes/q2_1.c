@@ -6,8 +6,8 @@
 int  main(void) //main function begins
 {
  
-//Other random numbers
-logg("log.dat", 1000000);
+//Gaussian random numbers
+gaussian("gau.dat", 1000000);
 
 return 0;
 }
